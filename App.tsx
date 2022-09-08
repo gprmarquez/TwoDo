@@ -29,8 +29,9 @@ const TabNavigator = () => {
   return (
     <Tab.Navigator 
       initialRouteName='Home'
-      activeColor={colors.blue}
-      barStyle={{ backgroundColor: colors.green}}
+      activeColor={colors.green}
+      inactiveColor={colors.black}
+      barStyle={{ backgroundColor: 'transparent' }}
     >
       <Tab.Screen 
         name='List' 
