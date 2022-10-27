@@ -8,6 +8,7 @@ import Filter from './components/Filter';
 import NewItem from './components/NewItem';
 import Search from './components/Search';
 import Settings from './components/Settings';
+import Details from './components/Details';
 
 // colors
 import colors from './assets/colors/colors';
@@ -97,8 +98,8 @@ export default function App() {
     return (
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name='TwoDo' component={TabNavigator} />
-          {/* <Stack.Screen name='Details' component={Details} /> */}
+          <Stack.Screen name='TwoDo' component={TabNavigator} options={{headerShown: false}}/>
+          <Stack.Screen name='Details' component={Details} />
         </Stack.Navigator>
       </NavigationContainer>
     );
