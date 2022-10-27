@@ -1,7 +1,9 @@
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React from "react";
 import {View, Text, Button} from 'react-native';
+import { ListProps } from "../types";
 
-const List = ({navigation}) => {
+const List: React.FC<ListProps> = ({navigation}) => {
     return (
         <View>
             <Text>List</Text>

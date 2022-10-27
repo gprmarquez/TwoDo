@@ -18,13 +18,12 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { RootStackParamList } from './types';
 
+const Stack = createNativeStackNavigator<RootStackParamList>();
+const Tab = createMaterialBottomTabNavigator();
 // 
 import React from 'react';
-import { View, Text } from 'react-native';
-
-const Stack = createNativeStackNavigator();
-const Tab = createMaterialBottomTabNavigator();
 
 const TabNavigator = () => {
   return (
@@ -90,7 +89,7 @@ const TabNavigator = () => {
 
 export default function App() {
   const isLoadingComplete = useCachedResources();
-  const colorScheme = useColorScheme();
+  // const colorScheme = useColorScheme();
 
   if (!isLoadingComplete) {
     return null;
@@ -98,8 +97,15 @@ export default function App() {
     return (
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name='TwoDo' component={TabNavigator} options={{headerShown: false}}/>
-          <Stack.Screen name='Details' component={Details} />
+          <Stack.Screen 
+            name='List' 
+            component={TabNavigator} 
+            options={{headerShown: false}}
+          />
+          <Stack.Screen 
+            name='Details' 
+            component={Details} 
+          />
         </Stack.Navigator>
       </NavigationContainer>
     );
