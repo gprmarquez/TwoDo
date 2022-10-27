@@ -3,8 +3,8 @@ import useCachedResources from './hooks/useCachedResources';
 import useColorScheme from './hooks/useColorScheme';
 
 // screens
-import Home from './components/Home';
 import List from './components/List';
+import Filter from './components/Filter';
 import NewItem from './components/NewItem';
 import Search from './components/Search';
 import Settings from './components/Settings';
@@ -28,21 +28,31 @@ const Tab = createMaterialBottomTabNavigator();
 const TabNavigator = () => {
   return (
     <Tab.Navigator 
-      initialRouteName='Home'
+      initialRouteName='List'
       activeColor={colors.green}
       inactiveColor={colors.black}
       barStyle={{ backgroundColor: 'transparent' }}
     >
       <Tab.Screen 
-        name='List' 
-        component={List}
+        name='Filter' 
+        component={Filter}
         options={{
-          tabBarLabel: 'List',
+          tabBarLabel: 'Filter',
           tabBarIcon: ({color}) => (
             <MaterialCommunityIcons name="filter-variant" color={color} size={26} />
           ),
         }}
       />
+        <Tab.Screen 
+          name='Search' 
+          component={Search}
+          options={{
+            tabBarLabel: 'Search',
+            tabBarIcon: ({color}) => (
+              <MaterialCommunityIcons name="magnify" color={color} size={26} />
+            ),
+          }}
+        />
       <Tab.Screen 
         name='NewItem' 
         component={NewItem}
@@ -54,22 +64,12 @@ const TabNavigator = () => {
         }}
       />
       <Tab.Screen 
-        name='Home' 
-        component={Home}
+        name='List' 
+        component={List}
         options={{
-          tabBarLabel: 'Home',
+          tabBarLabel: 'List',
           tabBarIcon: ({color}) => (
-            <MaterialCommunityIcons name="home" color={color} size={26} />
-          ),
-        }}
-      />
-      <Tab.Screen 
-        name='Search' 
-        component={Search}
-        options={{
-          tabBarLabel: 'Search',
-          tabBarIcon: ({color}) => (
-            <MaterialCommunityIcons name="magnify" color={color} size={26} />
+            <MaterialCommunityIcons name="format-list-bulleted-square" color={color} size={26} />
           ),
         }}
       />
@@ -97,7 +97,8 @@ export default function App() {
     return (
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name='Main' component={TabNavigator} />
+          <Stack.Screen name='TwoDo' component={TabNavigator} />
+          {/* <Stack.Screen name='Details' component={Details} /> */}
         </Stack.Navigator>
       </NavigationContainer>
     );

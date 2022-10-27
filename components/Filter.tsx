@@ -1,12 +1,12 @@
 import React from "react";
 import {View, Text} from 'react-native';
 
-const Home = () => {
+const Filter = () => {
     return (
         <View>
-            <Text>Home</Text>
+            <Text>Filter</Text>
         </View>
     );
 }
 
-export default Home;
+export default Filter;
