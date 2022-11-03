@@ -3,12 +3,12 @@ import useCachedResources from './hooks/useCachedResources';
 import useColorScheme from './hooks/useColorScheme';
 
 // screens
-import List from './components/List';
-import Filter from './components/Filter';
-import NewItem from './components/NewItem';
-import Search from './components/Search';
-import Settings from './components/Settings';
-import Details from './components/Details';
+import List from './screens/List';
+import Filter from './screens/Filter';
+import NewItem from './screens/NewItem';
+import Search from './screens/Search';
+import Settings from './screens/Settings';
+import Details from './screens/Details';
 
 // colors
 import colors from './assets/colors/colors';

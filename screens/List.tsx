@@ -3,6 +3,7 @@ import {View, Text, StyleSheet, ScrollView } from 'react-native';
 import { SafeAreaView } from "react-native-safe-area-context";
 import colors from "../assets/colors/colors";
 import { ListProps } from "../types";
+import poppinsBlack from '../assets/fonts/Poppins-Black.ttf'
 
 const List: React.FC<ListProps> = ({navigation}) => {
     return (
@@ -31,6 +32,7 @@ const styles = StyleSheet.create({
         marginTop: 20
     },
     title: {
+        fontFamily: poppinsBlack,
         fontSize: 18
     },
 });
