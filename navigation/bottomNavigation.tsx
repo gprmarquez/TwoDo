@@ -25,6 +25,7 @@ const TabNavigator = () => {
         name="Filter"
         component={Filter}
         options={{
+          title: "Filter",
           tabBarLabel: "Filter",
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons
@@ -39,6 +40,7 @@ const TabNavigator = () => {
         name="Search"
         component={Search}
         options={{
+          title: "Search",
           tabBarLabel: "Search",
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="magnify" color={color} size={26} />
@@ -49,6 +51,7 @@ const TabNavigator = () => {
         name="NewItem"
         component={NewItem}
         options={{
+          title: "New Item",
           tabBarLabel: "New Item",
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons
@@ -63,6 +66,7 @@ const TabNavigator = () => {
         name="List"
         component={List}
         options={{
+          title: "List",
           tabBarLabel: "List",
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons
