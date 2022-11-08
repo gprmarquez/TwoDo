@@ -10,12 +10,7 @@ const List: React.FC<ListProps> = ({navigation}) => {
         <View style={styles.container}>
             <ScrollView>
                 <SafeAreaView>
-                    {/* Title */}
-                    <View style={styles.titleWrapper}>
-                        <Text style={styles.title}>
-                            Home
-                        </Text>
-                    </View>
+               
                 </SafeAreaView>
             </ScrollView>
         </View>

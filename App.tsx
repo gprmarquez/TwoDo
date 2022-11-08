@@ -2,6 +2,9 @@
 import useCachedResources from './hooks/useCachedResources';
 import useColorScheme from './hooks/useColorScheme';
 
+// from paper
+import { Provider as PaperProvider } from 'react-native-paper';
+
 // screens
 import List from './screens/List';
 import Filter from './screens/Filter';
@@ -95,19 +98,21 @@ export default function App() {
     return null;
   } else {
     return (
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen 
-            name='List' 
-            component={TabNavigator} 
-            options={{headerShown: false}}
-          />
-          <Stack.Screen 
-            name='Details' 
-            component={Details} 
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
+      <PaperProvider>
+        <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Screen 
+              name='List' 
+              component={TabNavigator} 
+              options={{headerShown: false}}
+            />
+            <Stack.Screen 
+              name='Details' 
+              component={Details} 
+            />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </PaperProvider>
     );
   }
 }
