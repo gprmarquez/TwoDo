@@ -5,13 +5,11 @@ import colors from "../assets/colors/colors";
 import { ListProps } from "../types";
 import poppinsBlack from "../assets/fonts/Poppins-Black.ttf";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-
-import templateData from "../assets/data/templateData";
+import Card from "../components/content/TaskCard";
 
 const List: React.FC<ListProps> = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <ScrollView>
         {/* Header */}
         <SafeAreaView>
           <View style={styles.menuWrapper}>
@@ -22,18 +20,24 @@ const List: React.FC<ListProps> = ({ navigation }) => {
             />
           </View>
         </SafeAreaView>
-        <SafeAreaView>
-          {/* Title */}
-          <View style={styles.titleWrapper}>
-            <Text style={styles.title}>Home</Text>
-          </View>
-        </SafeAreaView>
-      </ScrollView>
+        {/* Title */}
+        <View style={styles.titleWrapper}>
+          <Text style={styles.title}>Home</Text>
+          {/* This is where the card component would go */}
+          <Card></Card>
+        </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  menuWrapper: {
+    marginHorizontal: 20,
+    marginTop: 20,
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  menuIcon: {},
   container: {
     flex: 1,
     color: colors.backgroundBlue,
@@ -42,10 +46,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
     marginTop: 20,
   },
-  title: {
-    fontFamily: poppinsBlack,
-    fontSize: 18,
-  },
+  title: {},
 });
 
 export default List;
