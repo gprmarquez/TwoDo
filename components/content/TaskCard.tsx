@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import { FlatList, StyleSheet, View, Text } from "react-native";
+import { FlatList, StyleSheet, View, Text} from "react-native";
 import templateData from "../../assets/data/templateData";
+
 
 export default function Card() {
   const [items, setItem] = useState(templateData);
 
   return (
     <View style={styles.card}>
-      <View style={styles.cardContent}>
+        <View style={styles.cardContent}>
         <FlatList 
           data={items}
           renderItem={({ item }) => (
